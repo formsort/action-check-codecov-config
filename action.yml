@@ -19,3 +19,7 @@ runs:
       #       Until then, go up-vote https://stackoverflow.com/a/67216965/90297
       #       GitHub VM info: https://github.com/actions/virtual-environments/blob/main/images/linux/Ubuntu2004-Readme.md
       run: curl -s -o - -w "\n%{http_code}\n" --data-binary @codecov.yml https://codecov.io/validate | awk '{l[NR] = $0} END {for (i=1; i<=NR-1; i++) print l[i]}; END{ if ($0<200||$0>299) exit $0 }'
+
+branding:
+  color: orange
+  icon: check-circle
